@@ -1,8 +1,7 @@
-import type { ChangeEvent } from 'react';
 import { useEffect, useRef } from 'react';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
-
 import type { AppDispatch, AppState } from './store';
+
 
 // https://overreacted.io/making-setinterval-declarative-with-react-hooks/
 export const useInterval = (callback: Function, delay: number) => {
