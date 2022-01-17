@@ -1,0 +1,3 @@
+.checkboxRound {
+  transition: opacity 0.15s cubic-bezier(0.4, 0, 1, 1);
+}

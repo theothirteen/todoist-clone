@@ -1,38 +1,61 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import type { AppState } from '../../app/store';
 import Todo from './types/Todo';
+import { v4 as uuidv4 } from 'uuid';
 
-export interface CounterState {
+export interface TodoState {
   todos: Todo[];
 }
 
-const initialState: CounterState = {
-  todos: [],
+const initialState: TodoState = {
+  todos: [
+    { text: 'This is working', order: 0, id: uuidv4(), isCompleted: false },
+    { text: 'This is working 2 ', order: 1, id: uuidv4(), isCompleted: false },
+  ],
 };
 
+export const markTodoAsCompleted = createAsyncThunk(
+  'todo/markAsComplete',
+  async (todoId: string) => {
+    return todoId;
+  }
+);
+
+export const addTodo = createAsyncThunk(
+  'todo/addTodo',
+  async (todoText: string) => {
+    console.log('todoText: ', todoText);
+    return todoText;
+  }
+);
+
 export const todoSlice = createSlice({
-  name: 'counter',
+  name: 'todo',
   initialState,
-  // The `reducers` field lets us define reducers and generate associated actions
-  reducers: {
-    addTodo: (state) => {
-      // Redux Toolkit allows us to write "mutating" logic in reducers. It
-      // doesn't actually mutate the state because it uses the Immer library,
-      // which detects changes to a "draft state" and produces a brand new
-      // immutable state based off those changes
-      state.todos = [];
-    },
-    removeTodo: (state) => {
-      state.todos = [];
-    },
+  reducers: {},
+
+  // In future to bind APIs thunkActions are used
+  extraReducers: (builder) => {
+    builder.addCase(markTodoAsCompleted.fulfilled, (state, action) => {
+      if (state.todos.length > 0) {
+        state.todos = state.todos.filter((todo) => todo.id !== action.payload);
+      }
+    });
+    builder.addCase(addTodo.fulfilled, (state, action) => {
+      const todo = {
+        text: action.payload,
+        order: state.todos.length + 1,
+        id: uuidv4(),
+        isCompleted: false,
+      };
+
+      state.todos.push(todo);
+    });
   },
 });
 
-export const { addTodo, removeTodo } = todoSlice.actions;
+// export const {} = todoSlice.actions;
 
-// The function below is called a selector and allows us to select a value from
-// the state. Selectors can also be defined inline where they're used instead of
-// in the slice file. For example: `useSelector((state: RootState) => state.counter.value)`
 export const selectTodos = (state: AppState) => state.todo.todos;
 
 export default todoSlice.reducer;
