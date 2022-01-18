@@ -30,6 +30,10 @@ function TodoItem({ text, id, isCompleted }: Todo) {
     }
   };
 
+  const handleClick = () => {
+    console.log('Todo Item Clicked');
+  };
+
   return (
     <div
       className='min-h-40 border-b border-b-[#f0f0f0] pt-2 pb-2'
@@ -39,6 +43,7 @@ function TodoItem({ text, id, isCompleted }: Todo) {
       <TextWithIcon
         iconComponent={renderIcon(handleChange)}
         textComponent={renderText(text)}
+        onClick={handleClick}
       />
     </div>
   );
