@@ -1,5 +1,10 @@
+[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/summary/new_code?id=theothirteen_todoist-clone)
+
+---
+
 ## About this Project
-This project is just an experiment with Next.js. I am trying to understand Next.js and adding the best practices that I learned. 
+
+This project is just an experiment with Next.js. I am trying to understand Next.js and adding the best practices that I learned.
 
 ## Getting Started
 
@@ -34,6 +39,6 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-
 ## License
+
 [MIT](LICENSE)
