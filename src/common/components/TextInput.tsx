@@ -1,5 +1,4 @@
-import React, { ChangeEvent, useCallback } from 'react';
-import debounce from 'lodash.debounce';
+import React from 'react';
 
 type TextInputProps = {
   value: string;
@@ -24,7 +23,6 @@ export default function TextInput({
   inputWidth = InputWidth.full,
   outline,
 }: TextInputProps) {
-  //TODO: Update event type
   const handleKeyUp = (e: any) => {
     if (e.key === 'Enter') {
       onSubmit();
@@ -32,8 +30,7 @@ export default function TextInput({
   };
 
   const handleChange = (event: any) => {
-    const { value } = event.target;
-    onChange(value);
+    onChange(event.target.value);
   };
 
   return (

@@ -54,8 +54,6 @@ export const todoSlice = createSlice({
   },
 });
 
-// export const {} = todoSlice.actions;
-
 export const selectTodos = (state: AppState) => state.todo.todos;
 
 export default todoSlice.reducer;
