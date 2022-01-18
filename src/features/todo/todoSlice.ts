@@ -9,8 +9,8 @@ export interface TodoState {
 
 const initialState: TodoState = {
   todos: [
-    { text: 'This is working', order: 0, id: uuidv4(), isCompleted: false },
-    { text: 'This is working 2 ', order: 1, id: uuidv4(), isCompleted: false },
+    { text: 'Test Todo 1', order: 0, id: uuidv4(), isCompleted: false },
+    { text: 'Test Todo 2', order: 1, id: uuidv4(), isCompleted: false },
   ],
 };
 
