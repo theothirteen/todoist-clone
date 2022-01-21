@@ -11,25 +11,6 @@ module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
-      textColor: {
-        skin: {
-          primary: withOpacity('--color-text-primary'),
-          secondary: withOpacity('--color-text-secondary'),
-          inverted: withOpacity('--color-text-inverted'),
-          hover: withOpacity('--color-text-primary-hover'),
-          'icon-primary': withOpacity('--color-icon-primary'),
-          'icon-accent-hover': withOpacity('--color-text-inverted'),
-          'icon-accent': withOpacity('--color-text-hover'),
-        },
-      },
-      backgroundColor: {
-        skin: {
-          fill: withOpacity('--color-fill'),
-          'button-accent': withOpacity('--color-button-accent'),
-          'button-muted': withOpacity('--color-button-muted'),
-          'button-muted-hover': withOpacity('--color-button-muted-hover'),
-        },
-      },
       colors: {
         primary: withOpacity('--color-primary'),
         'on-primary': withOpacity('--color-on-primary'),
