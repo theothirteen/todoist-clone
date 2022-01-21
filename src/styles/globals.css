@@ -19,3 +19,59 @@ a {
 * {
   box-sizing: border-box;
 }
+
+@layer base {
+  :root {
+    --color-primary: 219, 76, 63;
+    --color-on-primary: 255, 255, 255;
+    --color-background: 255, 255, 255;
+    --color-on-background: 32, 32, 32;
+    --color-on-background-varient: 128, 128, 128;
+    --color-on-background-varient-2: 235, 235, 235;
+    --color-on-background-border: 240, 240, 240;
+    --color-on-background-border-varient: 221, 221, 221;
+    --color-on-background-border-varient-2: 214, 214, 214;
+    --color-on-background-border-varient-3: 189, 189, 189;
+    --color-surface: 250, 250, 250;
+    --color-on-surface: 32, 32, 32;
+  }
+
+  .theme-tangerine {
+    --color-primary: 255, 144, 0;
+    --color-on-primary: 255, 255, 255;
+    --color-background: 255, 255, 255;
+    --color-on-background: 32, 32, 32;
+    --color-on-background-varient: 128, 128, 128;
+
+    --color-surface: 250, 250, 250;
+    --color-on-surface: 32, 32, 32;
+  }
+  .theme-noir {
+    --color-primary: 61, 61, 61;
+    --color-on-primary: 255, 255, 255;
+    --color-background: 255, 255, 255;
+    --color-on-background: 32, 32, 32;
+    --color-on-background-varient: 128, 128, 128;
+    --color-surface: 250, 250, 250;
+    --color-on-surface: 32, 32, 32;
+  }
+}
+
+.btn {
+  @apply pl-2 pr-2 rounded-md h-8;
+  transition-property: box-shadow;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}
+
+.btn-primary {
+  @apply border border-primary bg-primary text-on-primary;
+}
+
+.btn-secondary {
+  @apply border text-on-background border-on-background-border-varient-2;
+}
+
+.btn-secondary:hover {
+  @apply border border-on-background-border-varient-3 bg-on-background-varient-2;
+}
