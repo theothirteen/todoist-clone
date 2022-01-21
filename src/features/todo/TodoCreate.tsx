@@ -45,7 +45,7 @@ function TodoCreate() {
       onSubmit={onSubmit}
     />
   ) : (
-    <div className='hover:text-[#dd4b39]'>
+    <div className='text-on-background-varient hover:text-primary'>
       <TextWithIcon
         iconComponent={renderIcon()}
         textComponent={renderText('Add a task')}

@@ -36,7 +36,7 @@ function TodoItem({ text, id, isCompleted }: Todo) {
 
   return (
     <div
-      className='min-h-40 border-b border-b-[#f0f0f0] pt-2 pb-2'
+      className='min-h-40 border-b border-b-on-background-border pt-2 pb-2 text-on-background'
       key={id}
       onClick={handleChange}
     >

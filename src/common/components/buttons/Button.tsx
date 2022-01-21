@@ -12,21 +12,13 @@ enum ButtonVarient {
   Secondary,
 }
 
-const commonStyle = 'pl-2 pr-2 rounded-md h-8';
-
 export default function Button({ varient, text, onClick, style }: ButtonProps) {
   return varient === ButtonVarient.Primary ? (
-    <button
-      onClick={onClick}
-      className={`${commonStyle} ${style} bg-[#db4c3f] text-white `}
-    >
+    <button onClick={onClick} className={`btn btn-primary ${style}`}>
       {text}
     </button>
   ) : (
-    <button
-      onClick={onClick}
-      className={`${commonStyle} ${style} border border-[#d6d6d6] hover:border-[#bdbdbd] hover:bg-[#ebebeb]`}
-    >
+    <button onClick={onClick} className={`btn btn-secondary ${style}`}>
       {text}
     </button>
   );
